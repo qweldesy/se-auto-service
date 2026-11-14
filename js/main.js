@@ -26,6 +26,7 @@ const setMenu = (open) => {
   burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
   burger.classList.toggle('is-open', open);
   document.body.classList.toggle('is-locked', open);
+  document.querySelectorAll('main, .site-footer').forEach((el) => { el.inert = open; });
 
   if (open) {
     menu.hidden = false;
